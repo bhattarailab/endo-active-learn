@@ -1,0 +1,18 @@
+#Hardware
+CUDA_VISIBLE_DEVICES = 0
+
+#Active Learning Settings
+SPLITS = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+NUM_IMAGES = 13104
+INITIAL_BUDGET = 100
+BUDGET = 100
+SUBSET = 2000
+COMPLETE = True
+LATENT_DIM = 512
+
+EPOCHV = 100
+#Contrastive Learning Settings
+BASE_MODEL = 'resnet18'
+OUTDIM = 512
+N_VIEW = 2
+TEMPERATURE = 0.07
