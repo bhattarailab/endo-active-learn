@@ -50,8 +50,8 @@ For training on segmentation dataset, first download kvasir-seg.zip file from th
 Replace *your_result_path* to the path you want to store checkpoints and intermediate results in. Replace *tdr* with the path to kvasir-seg dataset path. 
 Replace *al_method* with one of the above options. We have also tested uncertainty based methods in this dataset. For that, you can choose one of the following options:
 
-- UncertainwithCoreset
-- UncertainwithPCA
+- UncertainWithCoreset
+- UncertainWithPCA
 
 When training with method that requires PCA, PCA of datasets needed to be computed. Use following command for PCA calculation
 ```bash
