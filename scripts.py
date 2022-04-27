@@ -1,6 +1,4 @@
-##Simple script for generating data.tx
-##This script can be further edited for collecting all image paths for 3 zip files
-##Run this sciprt to generate data.txt for basic code testing
+##Simple script for generating train.txt, test.txt and valid.txt
 
 import os
 import random

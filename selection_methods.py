@@ -183,7 +183,7 @@ def query_samples(models, train_dataset, unlabeled_indices, labeled_indices, cyc
             indices = list(intmd_unlabeled[arg])
             indices_to_label += indices
     
-    if opt.mehod == "UncertainWithPCA":
+    if opt.method == "UncertainWithPCA":
         indices_to_label = []
 
         while len(indices_to_label) < BUDGET:
@@ -204,7 +204,7 @@ def query_samples(models, train_dataset, unlabeled_indices, labeled_indices, cyc
     if opt.method == 'CoreSetPCA':
         unlabeled_loader = DataLoader(train_dataset, sampler=SubsetSequentialSampler(np.append(unlabeled_indices, labeled_indices)), 
                 batch_size=opt.batch_size)
-        arg = get_kcg_pca(models, INITIAL_BUDGET + BUDGET*cycle, unlabeled_loader, unlabeled_indices, BUDGET)
+        arg = get_kcg_pca(INITIAL_BUDGET + BUDGET*cycle, unlabeled_loader, unlabeled_indices, BUDGET)
         indices_to_label = list(torch.tensor(unlabeled_indices)[arg].numpy())
         
     if opt.method == 'Random':
@@ -215,7 +215,7 @@ def query_samples(models, train_dataset, unlabeled_indices, labeled_indices, cyc
     if opt.method == 'CoreSet':
         unlabeled_loader = DataLoader(train_dataset, sampler=SubsetSequentialSampler(np.append(unlabeled_indices, labeled_indices)), 
                 batch_size=opt.batch_size)
-        arg = get_kcg(models, INITIAL_BUDGET + BUDGET*cycle, unlabeled_loader, unlabeled_indices, BUDGET,
+        arg = get_kcg(models, INITIAL_BUDGET + BUDGET*cycle, unlabeled_loader, unlabeled_indices, BUDGET, opt,
                         opt.save_feat, opt.output_path, split)
 
         indices_to_label = list(torch.tensor(unlabeled_indices)[arg].numpy())

@@ -11,8 +11,8 @@ from networks import *
 from datasets import *
 #from pix2pix.train_test import train_adv
 from utils import *
-from config import *
-from train_test import train, train_adv
+from depth_config import *
+from train_test import train
 from selection_methods import query_samples
 
 

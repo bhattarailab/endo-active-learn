@@ -32,6 +32,17 @@ Replace *al_method* with one of the following options:
 - Random
 - VAAL
 
+For training dataset on depth estimation, dataset from http://cmic.cs.ucl.ac.uk/ColonoscopyDepth/ was used. Following commands can be executed in sequence to get datasets for depth estimation
+```bash
+wget http://cmic.cs.ucl.ac.uk/ColonoscopyDepth/Data/T1.zip
+wget http://cmic.cs.ucl.ac.uk/ColonoscopyDepth/Data/T2.zip
+wget http://cmic.cs.ucl.ac.uk/ColonoscopyDepth/Data/T3.zip
+mkdir T1 | mkdir T2 | mkdir T3
+unzip T1.zip -d T1/ 
+unzip T2.zip -d T2/ 
+unzip T3.zip -d T3/
+python scripts.pys
+```
 For training on segmentation dataset, first download kvasir-seg.zip file from the link https://datasets.simula.no/kvasir-seg/ and extract it to your preferred location. Then, use the following command
 ```bash
     python train_seg.py --n_epochs 100 --train_dir tdr --output_path your_result_path --method al_method 
@@ -42,6 +53,16 @@ Replace *al_method* with one of the above options. We have also tested uncertain
 - UncertainwithCoreset
 - UncertainwithPCA
 
+When training with method that requires PCA, PCA of datasets needed to be computed. Use following command for PCA calculation
+```bash
+    python pca.py --task your_task
+```
+Replace *your_task* with one of the following options:
+
+- depth
+- segs
+
+For visualization of losses and metrics, [wandb](https://wandb.ai/) was used. So wandb should be configured in your machine before training the model.
 # Citation
 ```bash
 @article{thapa2022task,

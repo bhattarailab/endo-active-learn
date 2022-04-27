@@ -12,7 +12,7 @@ from datasets import *
 #from pix2pix.train_test import train_adv
 from utils import *
 from config import *
-from train_test import train, train_adv, calculate_mean_iou
+from train_test import train, calculate_mean_iou
 from selection_methods import query_samples
 
 

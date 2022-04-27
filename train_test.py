@@ -9,7 +9,7 @@ import torch
 from tqdm import tqdm
 import wandb
 from torchvision.utils import save_image
-from utils import cal_rmse, cal_mae, ntxent_loss, MeanIOU
+from utils import cal_rmse, cal_mae, MeanIOU
 from config import *
 
 def inv_normalize(img_tensor):

@@ -13,7 +13,7 @@ from data.sampler import SubsetSequentialSampler
 
 
 
-def get_kcg(models, labeled_data_size, unlabeled_loader, unlabeled_indices, budget, opt, unc_score=None, alpha=0.0, save_features=False, out_path=None, splits=None):
+def get_kcg(models, labeled_data_size, unlabeled_loader, unlabeled_indices, budget, opt, save_features=False, out_path=None, splits=None):
     models['generator'].eval()
     if opt.cuda:
         features = torch.tensor([]).cuda()
@@ -31,8 +31,7 @@ def get_kcg(models, labeled_data_size, unlabeled_loader, unlabeled_indices, budg
             np.save(f'./{out_path}/features/feats_after{splits}.npy', feat)
         num_unlabeled_indices = len(unlabeled_indices)
         new_av_idx = np.arange(num_unlabeled_indices,(num_unlabeled_indices + labeled_data_size))
-        use_unc = False if alpha == 0.0 else True
-        sampling = kCenterGreedy(feat, use_unc=use_unc, alpha=alpha, unc_score=unc_score)  
+        sampling = kCenterGreedy(feat)  
         batch = sampling.select_batch_(new_av_idx, budget)
         #other_idx = [x for x in range(num_unlabeled_indices) if x not in batch]
     return batch
