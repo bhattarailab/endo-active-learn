@@ -7,7 +7,7 @@ Semantic segmentation of polyps and depth estimation are two important research 
 
 # Training
 
-For training on depth dataset:
+For training on depth dataset, use the following command
 ```bash
     python main.py --n_epochs 100 --output_path your_result_path --method al_method --num_gen_steps 2
 ```
@@ -19,8 +19,7 @@ Replace *al_method* with one of the following options:
 - Random
 - VAAL
 
-For training on segmentation dataset:
-Download kvasir-seg.zip file from the link https://datasets.simula.no/kvasir-seg/. 
+For training on segmentation dataset, first download kvasir-seg.zip file from the link https://datasets.simula.no/kvasir-seg/ and extract it to your preferred location. Then, use the following command
 ```bash
     python train_seg.py --n_epochs 100 --train_dir tdr --output_path your_result_path --method al_method 
 ```
