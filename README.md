@@ -9,13 +9,25 @@ Semantic segmentation of polyps and depth estimation are two important research 
 
 For training on depth dataset:
 ```bash
-    python main.py --n_epochs 100 --output_path *your_result_path* --method *al_method* --num_gen_steps 2
+    python main.py --n_epochs 100 --output_path your_result_path --method al_method --num_gen_steps 2
 ```
+
 Replace *your_result_path* to the path you want to store checkpoints and intermediate results in.
 Replace *al_method* with one of the following options:
 - CoreSet
 - CoreSetPCA
 - Random
 - VAAL
+
+For training on segmentation dataset:
+Download kvasir-seg.zip file from the link https://datasets.simula.no/kvasir-seg/. 
+```bash
+    python train_seg.py --n_epochs 100 --train_dir tdr --output_path your_result_path --method al_method 
+```
+Replace *your_result_path* to the path you want to store checkpoints and intermediate results in. Replace *tdr* with the path to kvasir-seg dataset path. 
+Replace *al_method* with one of the above options. We have also tested uncertainty based methods in this dataset. For that, you can choose one of the following options:
+
+- UncertainwithCoreset
+- UncertainwithPCA
 
 
