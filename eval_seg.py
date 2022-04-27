@@ -21,7 +21,7 @@ parser.add_argument("--ckpt", type=int, help="best model checkpoint")
 
 opt = parser.parse_args()
 
-test_dataset = KvasirSegDataset('./sessile-Kvasir-SEG')
+test_dataset = KvasirSegDataset('./sessile-main-Kvasir-SEG')
 
 generator = GeneratorUNet(in_channels=3, out_channels=1)
 

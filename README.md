@@ -63,6 +63,18 @@ Replace *your_task* with one of the following options:
 - segs
 
 For visualization of losses and metrics, [wandb](https://wandb.ai/) was used. So wandb should be configured in your machine before training the model.
+
+# Evaluation
+
+In this version of code, there is no automation of evaluation process. When training the model, all the checkpoints upto given epochs are stored and metrics on validation dataset can be obtained in wandb runs. With help of validation metrics, best epochs can be found out and metrics on test dataset can be obtained by following:
+
+```bash
+    python eval_depth.py --result_dir your_result_path --split dataset_split_or_cycle --ckpt best_epoch
+```
+Epoch starts from 0 and for segmentation, replace *eval_depth.py* with *eval_seg.py*.
+
+
+
 # Citation
 ```bash
 @article{thapa2022task,
