@@ -42,4 +42,13 @@ Replace *al_method* with one of the above options. We have also tested uncertain
 - UncertainwithCoreset
 - UncertainwithPCA
 
+# Citation
+```bash
+@article{thapa2022task,
+  title={Task-Aware Active Learning for Endoscopic Image Analysis},
+  author={Thapa, Shrawan Kumar and Poudel, Pranav and Bhattarai, Binod and Stoyanov, Danail},
+  journal={arXiv preprint arXiv:2204.03440},
+  year={2022}
+}
+```
 
