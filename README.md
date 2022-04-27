@@ -41,7 +41,7 @@ mkdir T1 | mkdir T2 | mkdir T3
 unzip T1.zip -d T1/ 
 unzip T2.zip -d T2/ 
 unzip T3.zip -d T3/
-python scripts.pys
+python scripts.py
 ```
 For training on segmentation dataset, first download kvasir-seg.zip file from the link https://datasets.simula.no/kvasir-seg/ and extract it to your preferred location. Then, use the following command
 ```bash
@@ -71,7 +71,7 @@ In this version of code, there is no automation of evaluation process. When trai
 ```bash
     python eval_depth.py --result_dir your_result_path --split dataset_split_or_cycle --ckpt best_epoch
 ```
-Epoch starts from 0 and for segmentation, replace *eval_depth.py* with *eval_seg.py*.
+Epoch starts from 0 and for segmentation, replace *eval_depth.py* with *eval_seg.py*. Test set for segmentation kvasir-sessile.zip can be downloaded from the segmentation dataset link provided above. 
 
 
 
