@@ -1,6 +1,6 @@
 # Task-Aware Active Learning for Endoscopic Image Analysis
 
-Official PyTorch implementation of the paper **Task-Aware Active Learning for Endoscopic Image Analysis**
+Official PyTorch implementation of the paper **Task-Aware Active Learning for Endoscopic Image Analysis**.\
 arxiv: https://arxiv.org/pdf/2204.03440.pdf
 
 # Abstract
