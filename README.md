@@ -9,10 +9,10 @@ Semantic segmentation of polyps and depth estimation are two important research 
 
 For training on depth dataset:
 ```bash
-    python main.py --n_epochs 100 --output_path your_result_path --method al_method --num_gen_steps 2
+    python main.py --n_epochs 100 --output_path *your_result_path* --method *al_method* --num_gen_steps 2
 ```
-Replace your_result_path to the path you want to store checkpoints and intermediate results in.
-Replace al_method with one of the following options:
+Replace *your_result_path* to the path you want to store checkpoints and intermediate results in.
+Replace *al_method* with one of the following options:
 - CoreSet
 - CoreSetPCA
 - Random
